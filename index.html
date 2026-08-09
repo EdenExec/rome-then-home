@@ -72,6 +72,47 @@ table.mini-cal td.day.trip div { background: var(--gold); color: #fff; border-ra
 .flashcard-pron { font-size: 10.5px; color: #999; font-style: italic; margin-bottom: 8px; }
 .flashcard-en { font-size: 12.5px; color: #555; text-transform: uppercase; letter-spacing: 0.3px; }
 
+/* ---------- FIELD GUIDE STAMPS & CARDS ---------- */
+.stamp { width: 46px; height: 46px; background: var(--paper); border: 1.5px solid var(--ink); display: flex; align-items: center; justify-content: center; position: relative; float: right; margin: 2px 0 10px 12px; flex-shrink: 0; }
+.stamp::before { content: ""; position: absolute; top: -1.5px; left: -1.5px; width: 0; height: 0; }
+.stamp.c-painting::before { border-top: 11px solid var(--ink); border-right: 11px solid transparent; }
+.stamp.c-landmark::before { border-top: 11px solid var(--gold); border-right: 11px solid transparent; }
+.stamp.c-artist::before { border-top: 11px solid transparent; border-left: 11px solid var(--ink); }
+.stamp.c-faith::before { border-top: 11px solid var(--ink); border-left: 11px solid transparent; float: right; }
+.stamp.c-knight::before { border-top: 11px solid transparent; border-left: 11px solid var(--gold); }
+.stamp .badge { position: absolute; bottom: -6px; right: -6px; width: 17px; height: 17px; background: var(--ink); color: var(--paper); display: flex; align-items: center; justify-content: center; font-size: 5.5px; font-weight: 800; border: 1px solid var(--gold); }
+.stamp .badge.circle { border-radius: 50%; }
+.stamp .badge.diamond { transform: rotate(45deg); }
+.stamp .badge.diamond span { transform: rotate(-45deg); display: block; }
+.stamp .badge.hex { clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); }
+.stamp .icon { width: 26px; height: 26px; }
+.clearfix::after { content: ""; display: table; clear: both; }
+
+.fg-card { width: 100%; background: var(--paper); border: 1.5px solid var(--ink); padding: 14px 12px; text-align: center; position: relative; margin-bottom: 12px; box-sizing: border-box; }
+.fg-card::before { content: ""; position: absolute; top: -1.5px; left: -1.5px; width: 0; height: 0; }
+.fg-card.c-painting::before { border-top: 20px solid var(--ink); border-right: 20px solid transparent; }
+.fg-card.c-landmark::before { border-top: 20px solid var(--gold); border-right: 20px solid transparent; }
+.fg-card.c-artist::before { border-top: 20px solid transparent; border-left: 20px solid var(--ink); }
+.fg-card.c-faith::before { border-top: 20px solid var(--ink); border-left: 20px solid transparent; float: right; }
+.fg-card.c-knight::before { border-top: 20px solid transparent; border-left: 20px solid var(--gold); }
+.fg-card .badge { position: absolute; top: -9px; right: -9px; width: 26px; height: 26px; background: var(--ink); color: var(--paper); display: flex; align-items: center; justify-content: center; font-size: 7px; font-weight: 800; border: 1.5px solid var(--gold); }
+.fg-card .badge.circle { border-radius: 50%; }
+.fg-card .badge.diamond { transform: rotate(45deg); }
+.fg-card .badge.diamond span { transform: rotate(-45deg); display: block; }
+.fg-card .badge.hex { clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); }
+.fg-card .eyebrow { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); font-weight: 700; margin: 6px 0 10px 0; }
+.fg-card .icon { height: 46px; display: flex; align-items: center; justify-content: center; margin-bottom: 8px; }
+.fg-card .title { font-size: 14px; font-weight: 800; margin-bottom: 2px; }
+.fg-card .meta { font-size: 10px; letter-spacing: 0.5px; text-transform: uppercase; color: #999; margin-bottom: 10px; }
+.fg-card .hint { border-top: 1px solid var(--gold-pale); padding-top: 8px; font-size: 12.5px; color: #444; text-align: left; }
+.fg-card .hint b { color: var(--gold); text-transform: uppercase; font-size: 9px; letter-spacing: 1px; display: block; margin-bottom: 3px; }
+
+.fg-cat-header { font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: var(--ink); font-weight: 800; margin: 24px 0 12px 0; border-bottom: 2px solid var(--ink); padding-bottom: 6px; }
+.fg-cat-header:first-child { margin-top: 0; }
+.fg-legend { background: var(--offwhite); padding: 14px; margin-top: 16px; font-size: 12px; }
+.fg-legend-row { display: flex; align-items: center; gap: 10px; padding: 5px 0; }
+.fg-legend-tri { width: 12px; height: 12px; flex-shrink: 0; }
+
 /* ---------- SECTIONS ---------- */
 details.section { border-top: 1px solid #EEEAE0; }
 summary.section-summary {
@@ -246,6 +287,7 @@ table.hitlist td { padding: 10px 3px; border-bottom: 1px solid #EEEAE0; vertical
   <a class="toc-link" href="#glossary"><span><span class="n">09</span>Glossary</span><span class="arrow">&darr;</span></a>
   <a class="toc-link" href="#tracker"><span><span class="n">10</span>Pre-Trip List</span><span class="arrow">&darr;</span></a>
   <a class="toc-link" href="#italian"><span><span class="n">&#9679;</span>Basic Italian</span><span class="arrow">&darr;</span></a>
+  <a class="toc-link" href="#fieldguide"><span><span class="n">&#9679;</span>The Field Guide</span><span class="arrow">&darr;</span></a>
   <a class="toc-link" href="#practicalities"><span><span class="n">11</span>Field Notes</span><span class="arrow">&darr;</span></a>
 </div>
 
@@ -308,7 +350,7 @@ table.hitlist td { padding: 10px 3px; border-bottom: 1px solid #EEEAE0; vertical
   <details class="subacc">
     <summary class="subacc-summary"><span>The Viper on Malta<span class="subacc-sub">Acts 28:1&ndash;6</span></span><span class="chevron">&#8250;</span></summary>
     <div class="subacc-body">
-      <p>The morning after the shipwreck, cold and soaked, Paul is gathering brushwood for a fire when a viper,
+      <div class="stamp c-faith"><div class="badge circle"><svg width="11" height="11" viewBox="0 0 20 20"><rect x="8" y="2" width="4" height="16" fill="#F7F5F0"/><rect x="2" y="8" width="16" height="4" fill="#F7F5F0"/></svg></div><svg class="icon" viewBox="0 0 70 70"><path d="M35 12 C25 8 14 8 8 12 L8 58 C14 54 25 54 35 58 C45 54 56 54 62 58 L62 12 C56 8 45 8 35 12 Z" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linejoin="round"/><line x1="35" y1="12" x2="35" y2="58" stroke="#1A1A1A" stroke-width="1.5"/><line x1="35" y1="26" x2="35" y2="38" stroke="#A8895C" stroke-width="2.5"/><line x1="29" y1="32" x2="41" y2="32" stroke="#A8895C" stroke-width="2.5"/></svg></div><p>The morning after the shipwreck, cold and soaked, Paul is gathering brushwood for a fire when a viper,
       driven out by the heat, latches onto his hand. The islanders watching &mdash; Acts calls them simply "the
       natives," genuinely kind, building the fire and sharing what they had &mdash; immediately assume he's a
       murderer, someone the sea itself failed to kill and justice was now finishing off. When Paul calmly shakes
@@ -462,7 +504,7 @@ table.hitlist td { padding: 10px 3px; border-bottom: 1px solid #EEEAE0; vertical
   <ul class="stop-list">
     <li><strong>Grand Master's Palace</strong>HQ of the Knights of St. John, 1571&ndash;80s. Armoury, tapestried State Rooms.</li>
     <li><strong>St. Paul's Shipwreck Church</strong>Special-permit visit; relic of the column of Paul's beheading.</li>
-    <li><strong>St. John's Co-Cathedral</strong>Baroque showstopper. Two Caravaggios, including his largest and only signed work.</li>
+    <div class="stamp c-landmark"><div class="badge diamond"><span>1/18</span></div><svg class="icon" viewBox="0 0 70 70"><rect x="16" y="30" width="38" height="34" fill="none" stroke="#1A1A1A" stroke-width="2"/><path d="M16 30 L35 12 L54 30 Z" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linejoin="round"/><rect x="27" y="30" width="4" height="20" fill="none" stroke="#A8895C" stroke-width="1"/><rect x="39" y="30" width="4" height="20" fill="none" stroke="#A8895C" stroke-width="1"/></svg></div><li><strong>St. John's Co-Cathedral</strong>Baroque showstopper. Two Caravaggios, including his largest and only signed work.</li>
     <li><strong>Upper Barrakka Gardens</strong>Grand Harbour views; noon cannon salute.</li>
   </ul>
 
@@ -522,7 +564,7 @@ table.hitlist td { padding: 10px 3px; border-bottom: 1px solid #EEEAE0; vertical
 
   <h3 class="subhead">Syracuse (Siracusa)</h3>
   <ul class="stop-list">
-    <li><strong>Neapolis Archaeological Park</strong>Greek Theatre (5th c. BC) and the Ear of Dionysius, a cave named by Caravaggio for its shape and acoustics.</li>
+    <div class="stamp c-landmark"><div class="badge diamond"><span>7/18</span></div><svg class="icon" viewBox="0 0 70 70"><path d="M35 4 C55 4 59 30 53 44 C49 54 45 64 35 66 C25 64 21 54 17 44 C11 30 15 4 35 4 Z" fill="none" stroke="#1A1A1A" stroke-width="2"/><path d="M35 14 C45 14 47 30 43 40 C41 46 38 52 35 54 C32 52 29 46 27 40 C23 30 25 14 35 14 Z" fill="none" stroke="#A8895C" stroke-width="1.3"/></svg></div><li><strong>Neapolis Archaeological Park</strong>Greek Theatre (5th c. BC) and the Ear of Dionysius, a cave named by Caravaggio for its shape and acoustics.</li>
     <li><strong>Ortigia &amp; the Duomo</strong>A cathedral built around the columns of a 5th-century BC Temple of Athena.</li>
     <li><strong>Fountain of Arethusa</strong>A couple minutes from the Duomo &mdash; a rare freshwater spring bubbling up at the sea's edge. Greek myth: the nymph Arethusa fled the river god Alpheus and was turned into this spring by Artemis.</li>
     <li><strong>Caravaggio's <em>Burial of St. Lucy</em></strong>Santa Lucia alla Badia, on Piazza del Duomo. Painted 1608, right after Caravaggio fled prison in Malta &mdash; the next chapter of the same fugitive story.</li>
@@ -635,14 +677,14 @@ table.hitlist td { padding: 10px 3px; border-bottom: 1px solid #EEEAE0; vertical
     <li><strong>Vatican Museums</strong>Raphael Rooms, then the Sistine Chapel (Michelangelo, 1508&ndash;12).</li>
     <li><strong>St. Peter's Basilica</strong>Michelangelo's <em>Piet&agrave;</em> is just inside the entrance.</li>
     <li><strong>Piazza Navona</strong>Built on the footprint of Domitian's stadium; Bernini's Four Rivers Fountain.</li>
-    <li><strong>Pantheon</strong>Best-preserved ancient Roman building, completed under Hadrian ~AD 126.</li>
+    <div class="stamp c-landmark"><div class="badge diamond"><span>15/18</span></div><svg class="icon" viewBox="0 0 70 70"><path d="M8 66 L8 30 A32 32 0 0 1 72 30 L72 66" fill="none" stroke="#1A1A1A" stroke-width="2.2" transform="translate(-5,0) scale(0.94)"/><rect x="-3" y="52" width="76" height="14" fill="none" stroke="#1A1A1A" stroke-width="2.2" transform="translate(-5,0) scale(0.94)"/><line x1="9" y1="52" x2="9" y2="38" stroke="#A8895C" stroke-width="1.2"/><line x1="21" y1="52" x2="21" y2="30" stroke="#A8895C" stroke-width="1.2"/><line x1="33" y1="52" x2="33" y2="26" stroke="#A8895C" stroke-width="1.2"/><line x1="45" y1="52" x2="45" y2="30" stroke="#A8895C" stroke-width="1.2"/><line x1="57" y1="52" x2="57" y2="38" stroke="#A8895C" stroke-width="1.2"/></svg></div><li><strong>Pantheon</strong>Best-preserved ancient Roman building, completed under Hadrian ~AD 126.</li>
     <li><strong>Ara Pacis</strong>Augustus's "Altar of Peace," 13&ndash;9 BC.</li>
   </ul>
 
   <h3 class="subhead">Imperial Rome &middot; Sep 16</h3>
   <ul class="stop-list">
     <li><strong>San Clemente</strong>12th-c. church atop 4th-c. basilica atop a 1st-c. Mithraic temple.</li>
-    <li><strong>Colosseum &amp; Arch of Constantine</strong>AD 80 and AD 315.</li>
+    <div class="stamp c-landmark"><div class="badge diamond"><span>14/18</span></div><svg class="icon" viewBox="0 0 70 70"><ellipse cx="35" cy="50" rx="32" ry="8" fill="none" stroke="#1A1A1A" stroke-width="2.2"/><path d="M3 50 L3 30 Q35 4 67 30 L67 50" fill="none" stroke="#1A1A1A" stroke-width="2.2"/><line x1="12" y1="46" x2="12" y2="28" stroke="#A8895C" stroke-width="1"/><line x1="22" y1="46" x2="22" y2="20" stroke="#A8895C" stroke-width="1"/><line x1="35" y1="46" x2="35" y2="16" stroke="#A8895C" stroke-width="1"/><line x1="48" y1="46" x2="48" y2="20" stroke="#A8895C" stroke-width="1"/><line x1="58" y1="46" x2="58" y2="28" stroke="#A8895C" stroke-width="1"/></svg></div><li><strong>Colosseum &amp; Arch of Constantine</strong>AD 80 and AD 315.</li>
     <li><strong>Forum, Mamertine Prison, Palatine Hill</strong>Tradition holds Paul and Peter's holding cell.</li>
   </ul>
 
@@ -715,23 +757,23 @@ table.hitlist td { padding: 10px 3px; border-bottom: 1px solid #EEEAE0; vertical
 
   <div class="hitlist-loc">1 &middot; Valletta, Malta &mdash; Sep 10</div>
   <table class="hitlist">
-    <tr><td class="hitlist-check">&#9633;</td><td><strong>The Beheading of Saint John the Baptist</strong> (1608)<br>St. John's Co-Cathedral &mdash; his largest work, the only one he signed</td></tr>
-    <tr><td class="hitlist-check">&#9633;</td><td><strong>Saint Jerome Writing</strong> (c. 1605&ndash;06)<br>St. John's Co-Cathedral &mdash; stolen in 1984, recovered two years later</td></tr>
+    <tr><td class="hitlist-check">&#9633;</td><td><div class="stamp c-painting"><div class="badge circle"><span>1/9</span></div><svg class="icon" viewBox="0 0 70 70"><rect x="8" y="4" width="54" height="62" fill="none" stroke="#1A1A1A" stroke-width="1.5"/><line x1="16" y1="50" x2="38" y2="50" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/><circle cx="14" cy="50" r="3.5" fill="none" stroke="#1A1A1A" stroke-width="1.5"/><circle cx="44" cy="26" r="4" fill="none" stroke="#A8895C" stroke-width="1.5"/><line x1="44" y1="30" x2="44" y2="42" stroke="#A8895C" stroke-width="1.5"/><line x1="44" y1="42" x2="30" y2="48" stroke="#A8895C" stroke-width="2" stroke-linecap="round"/></svg></div><strong>The Beheading of Saint John the Baptist</strong> (1608)<br>St. John's Co-Cathedral &mdash; his largest work, the only one he signed</td></tr>
+    <tr><td class="hitlist-check">&#9633;</td><td><div class="stamp c-painting"><div class="badge circle"><span>2/9</span></div><svg class="icon" viewBox="0 0 70 70"><rect x="8" y="4" width="54" height="62" fill="none" stroke="#1A1A1A" stroke-width="1.5"/><circle cx="30" cy="22" r="5" fill="none" stroke="#1A1A1A" stroke-width="1.5"/><path d="M27 27 Q22 36 26 46" fill="none" stroke="#1A1A1A" stroke-width="1.5"/><line x1="30" y1="30" x2="42" y2="42" stroke="#1A1A1A" stroke-width="1.5"/><rect x="34" y="42" width="16" height="10" fill="none" stroke="#A8895C" stroke-width="1.5"/><line x1="40" y1="40" x2="42" y2="44" stroke="#A8895C" stroke-width="1.3"/></svg></div><strong>Saint Jerome Writing</strong> (c. 1605&ndash;06)<br>St. John's Co-Cathedral &mdash; stolen in 1984, recovered two years later</td></tr>
   </table>
 
   <div class="hitlist-loc">2 &middot; Syracuse, Sicily &mdash; Sep 12</div>
   <table class="hitlist">
-    <tr><td class="hitlist-check">&#9633;</td><td><strong>The Burial of St. Lucy</strong> (1608)<br>Santa Lucia alla Badia, Piazza del Duomo &mdash; painted days after escaping prison in Malta</td></tr>
+    <tr><td class="hitlist-check">&#9633;</td><td><div class="stamp c-painting"><div class="badge circle"><span>3/9</span></div><svg class="icon" viewBox="0 0 70 70"><rect x="8" y="4" width="54" height="62" fill="none" stroke="#1A1A1A" stroke-width="1.5"/><line x1="16" y1="50" x2="42" y2="50" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/><circle cx="14" cy="50" r="3.5" fill="none" stroke="#1A1A1A" stroke-width="1.5"/><circle cx="24" cy="26" r="3.5" fill="none" stroke="#A8895C" stroke-width="1.3"/><line x1="24" y1="30" x2="24" y2="40" stroke="#A8895C" stroke-width="1.3"/><line x1="24" y1="34" x2="18" y2="40" stroke="#A8895C" stroke-width="1.3"/><circle cx="46" cy="30" r="3.5" fill="none" stroke="#A8895C" stroke-width="1.3"/><line x1="46" y1="34" x2="46" y2="44" stroke="#A8895C" stroke-width="1.3"/></svg></div><strong>The Burial of St. Lucy</strong> (1608)<br>Santa Lucia alla Badia, Piazza del Duomo &mdash; painted days after escaping prison in Malta</td></tr>
   </table>
 
   <div class="hitlist-loc">3 &middot; Rome &mdash; Sep 15</div>
   <table class="hitlist">
-    <tr><td class="hitlist-check">&#9633;</td><td><strong>Madonna di Loreto</strong> (1604&ndash;06)<br>Sant'Agostino &mdash; scandalous for its barefoot, dirty-footed pilgrims</td></tr>
-    <tr><td class="hitlist-check">&#9633;</td><td><strong>The Calling of Saint Matthew</strong> (1599&ndash;1600)<br>San Luigi dei Francesi, Contarelli Chapel</td></tr>
-    <tr><td class="hitlist-check">&#9633;</td><td><strong>The Inspiration of Saint Matthew</strong> (1602)<br>San Luigi dei Francesi, Contarelli Chapel</td></tr>
-    <tr><td class="hitlist-check">&#9633;</td><td><strong>The Martyrdom of Saint Matthew</strong> (1600&ndash;01)<br>San Luigi dei Francesi, Contarelli Chapel</td></tr>
-    <tr><td class="hitlist-check">&#9633;</td><td><strong>The Crucifixion of Saint Peter</strong> (1600&ndash;01)<br>Santa Maria del Popolo, Cerasi Chapel</td></tr>
-    <tr><td class="hitlist-check">&#9633;</td><td><strong>The Conversion of Saint Paul</strong> (1600&ndash;01)<br>Santa Maria del Popolo, Cerasi Chapel</td></tr>
+    <tr><td class="hitlist-check">&#9633;</td><td><div class="stamp c-painting"><div class="badge circle"><span>4/9</span></div><svg class="icon" viewBox="0 0 70 70"><rect x="8" y="4" width="54" height="62" fill="none" stroke="#1A1A1A" stroke-width="1.5"/><circle cx="35" cy="20" r="5" fill="none" stroke="#1A1A1A" stroke-width="1.5"/><path d="M28 26 L24 46 L46 46 L42 26 Z" fill="none" stroke="#1A1A1A" stroke-width="1.5"/><circle cx="35" cy="30" r="3" fill="none" stroke="#A8895C" stroke-width="1.3"/><circle cx="20" cy="54" r="3.5" fill="none" stroke="#A8895C" stroke-width="1.3"/><path d="M17 58 L22 50" fill="none" stroke="#A8895C" stroke-width="1.3"/></svg></div><strong>Madonna di Loreto</strong> (1604&ndash;06)<br>Sant'Agostino &mdash; scandalous for its barefoot, dirty-footed pilgrims</td></tr>
+    <tr><td class="hitlist-check">&#9633;</td><td><div class="stamp c-painting"><div class="badge circle"><span>5/9</span></div><svg class="icon" viewBox="0 0 70 70"><rect x="8" y="4" width="54" height="62" fill="none" stroke="#1A1A1A" stroke-width="1.5"/><line x1="48" y1="16" x2="34" y2="32" stroke="#1A1A1A" stroke-width="2.5" stroke-linecap="round"/><circle cx="50" cy="12" r="3.5" fill="none" stroke="#1A1A1A" stroke-width="1.5"/><circle cx="20" cy="42" r="3.5" fill="none" stroke="#A8895C" stroke-width="1.3"/><circle cx="30" cy="46" r="3.5" fill="none" stroke="#A8895C" stroke-width="1.3"/><line x1="16" y1="46" x2="36" y2="46" stroke="#A8895C" stroke-width="1.3"/><line x1="20" y1="46" x2="20" y2="54" stroke="#A8895C" stroke-width="1.3"/><line x1="30" y1="46" x2="30" y2="54" stroke="#A8895C" stroke-width="1.3"/></svg></div><strong>The Calling of Saint Matthew</strong> (1599&ndash;1600)<br>San Luigi dei Francesi, Contarelli Chapel</td></tr>
+    <tr><td class="hitlist-check">&#9633;</td><td><div class="stamp c-painting"><div class="badge circle"><span>6/9</span></div><svg class="icon" viewBox="0 0 70 70"><rect x="8" y="4" width="54" height="62" fill="none" stroke="#1A1A1A" stroke-width="1.5"/><circle cx="30" cy="44" r="5" fill="none" stroke="#1A1A1A" stroke-width="1.5"/><line x1="30" y1="49" x2="30" y2="58" stroke="#1A1A1A" stroke-width="1.5"/><line x1="35" y1="42" x2="46" y2="48" stroke="#1A1A1A" stroke-width="1.3"/><circle cx="42" cy="20" r="4" fill="none" stroke="#A8895C" stroke-width="1.3"/><path d="M36 22 L30 18 M48 22 L54 18" fill="none" stroke="#A8895C" stroke-width="1.3"/><line x1="40" y1="24" x2="34" y2="40" stroke="#A8895C" stroke-width="1.3"/></svg></div><strong>The Inspiration of Saint Matthew</strong> (1602)<br>San Luigi dei Francesi, Contarelli Chapel</td></tr>
+    <tr><td class="hitlist-check">&#9633;</td><td><div class="stamp c-painting"><div class="badge circle"><span>7/9</span></div><svg class="icon" viewBox="0 0 70 70"><rect x="8" y="4" width="54" height="62" fill="none" stroke="#1A1A1A" stroke-width="1.5"/><line x1="18" y1="52" x2="38" y2="52" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/><circle cx="16" cy="52" r="3.5" fill="none" stroke="#1A1A1A" stroke-width="1.5"/><circle cx="42" cy="20" r="4" fill="none" stroke="#A8895C" stroke-width="1.3"/><line x1="42" y1="24" x2="42" y2="36" stroke="#A8895C" stroke-width="1.3"/><line x1="42" y1="24" x2="52" y2="14" stroke="#A8895C" stroke-width="2" stroke-linecap="round"/><line x1="42" y1="36" x2="34" y2="46" stroke="#A8895C" stroke-width="1.3"/></svg></div><strong>The Martyrdom of Saint Matthew</strong> (1600&ndash;01)<br>San Luigi dei Francesi, Contarelli Chapel</td></tr>
+    <tr><td class="hitlist-check">&#9633;</td><td><div class="stamp c-painting"><div class="badge circle"><span>8/9</span></div><svg class="icon" viewBox="0 0 70 70"><rect x="8" y="4" width="54" height="62" fill="none" stroke="#1A1A1A" stroke-width="1.5"/><line x1="35" y1="14" x2="35" y2="50" stroke="#1A1A1A" stroke-width="2.2"/><line x1="21" y1="46" x2="49" y2="46" stroke="#1A1A1A" stroke-width="2.2"/><circle cx="35" cy="55" r="4" fill="none" stroke="#A8895C" stroke-width="1.5"/><line x1="35" y1="46" x2="24" y2="34" stroke="#A8895C" stroke-width="1.3"/><line x1="35" y1="46" x2="46" y2="34" stroke="#A8895C" stroke-width="1.3"/></svg></div><strong>The Crucifixion of Saint Peter</strong> (1600&ndash;01)<br>Santa Maria del Popolo, Cerasi Chapel</td></tr>
+    <tr><td class="hitlist-check">&#9633;</td><td><div class="stamp c-painting"><div class="badge circle"><span>9/9</span></div><svg class="icon" viewBox="0 0 70 70"><rect x="8" y="4" width="54" height="62" fill="none" stroke="#1A1A1A" stroke-width="1.5"/><circle cx="26" cy="48" r="4.5" fill="none" stroke="#1A1A1A" stroke-width="1.5"/><line x1="26" y1="52" x2="26" y2="58" stroke="#1A1A1A" stroke-width="1.5"/><line x1="26" y1="44" x2="18" y2="34" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round"/><line x1="26" y1="44" x2="30" y2="32" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round"/><path d="M38 40 Q46 24 58 22 Q52 30 54 40 Q46 36 38 40 Z" fill="none" stroke="#A8895C" stroke-width="1.3"/></svg></div><strong>The Conversion of Saint Paul</strong> (1600&ndash;01)<br>Santa Maria del Popolo, Cerasi Chapel</td></tr>
   </table>
 
   <div class="notebox">Bring euro coins for San Luigi dei Francesi &mdash; the chapel lighting is coin-operated,
@@ -754,7 +796,7 @@ table.hitlist td { padding: 10px 3px; border-bottom: 1px solid #EEEAE0; vertical
   <details class="subacc">
     <summary class="subacc-summary"><span>Michelangelo Buonarroti<span class="subacc-sub">1475&ndash;1564 &middot; Sistine Chapel, Piet&agrave;, Moses</span></span><span class="chevron">&#8250;</span></summary>
     <div class="subacc-body">
-      <p>Born in Caprese, apprenticed to Ghirlandaio at 13, then taken in by Lorenzo de' Medici's household in
+      <p><div class="stamp c-artist"><div class="badge hex"><span>1/5</span></div><svg class="icon" viewBox="0 0 70 70"><circle cx="35" cy="24" r="12" fill="none" stroke="#1A1A1A" stroke-width="2"/><path d="M14 62 C14 44 20 36 35 36 C50 36 56 44 56 62" fill="none" stroke="#1A1A1A" stroke-width="2"/></svg></div>Born in Caprese, apprenticed to Ghirlandaio at 13, then taken in by Lorenzo de' Medici's household in
       Florence, where he studied ancient sculpture alongside the Medici family's own children. He thought of
       himself as a sculptor, not a painter, and said so loudly &mdash; which makes the Sistine Chapel commission
       (1508) something close to an insult, forced on him by Pope Julius II. He initially refused, then relented,
@@ -776,7 +818,7 @@ table.hitlist td { padding: 10px 3px; border-bottom: 1px solid #EEEAE0; vertical
   <details class="subacc">
     <summary class="subacc-summary"><span>Raphael (Raffaello Sanzio)<span class="subacc-sub">1483&ndash;1520 &middot; School of Athens, Isaiah, his own tomb</span></span><span class="chevron">&#8250;</span></summary>
     <div class="subacc-body">
-      <p>Born in Urbino, trained under Perugino, in Rome by 25 and immediately put to work frescoing the papal
+      <p><div class="stamp c-artist"><div class="badge hex"><span>2/5</span></div><svg class="icon" viewBox="0 0 70 70"><circle cx="35" cy="35" r="26" fill="none" stroke="#1A1A1A" stroke-width="1.6"/><path d="M15 35 A20 12 0 0 1 55 35" fill="none" stroke="#A8895C" stroke-width="1.6"/><circle cx="35" cy="35" r="6" fill="none" stroke="#1A1A1A" stroke-width="1.3"/></svg></div>Born in Urbino, trained under Perugino, in Rome by 25 and immediately put to work frescoing the papal
       apartments &mdash; the Raphael Rooms &mdash; while Michelangelo was simultaneously up on scaffolding a few
       hundred feet away painting the Sistine ceiling. The two barely spoke; contemporaries describe real rivalry.
       <em>The School of Athens</em>, his masterpiece in the Stanza della Segnatura, is a who's-who of ancient
@@ -798,7 +840,7 @@ table.hitlist td { padding: 10px 3px; border-bottom: 1px solid #EEEAE0; vertical
   <details class="subacc">
     <summary class="subacc-summary"><span>Gian Lorenzo Bernini<span class="subacc-sub">1598&ndash;1680 &middot; St. Peter's colonnade, Four Rivers Fountain</span></span><span class="chevron">&#8250;</span></summary>
     <div class="subacc-body">
-      <p>Born in Naples, a genuine child prodigy &mdash; carving marble portrait busts by his teens that impressed
+      <p><div class="stamp c-artist"><div class="badge hex"><span>3/5</span></div><svg class="icon" viewBox="0 0 70 70"><path d="M35 62 C25 50 25 34 35 8 C45 34 45 50 35 62 Z" fill="none" stroke="#1A1A1A" stroke-width="2"/><path d="M20 44 Q35 38 50 44" fill="none" stroke="#A8895C" stroke-width="1.3"/></svg></div>Born in Naples, a genuine child prodigy &mdash; carving marble portrait busts by his teens that impressed
       Pope Paul V. He went on to dominate Roman art and architecture for over 50 years, favored by eight
       consecutive popes, essentially designing the public face of Baroque Rome. His sweeping colonnade around St.
       Peter's Square (1656&ndash;67) was meant, in his own words, to embrace visitors "like the maternal arms of
@@ -818,7 +860,7 @@ table.hitlist td { padding: 10px 3px; border-bottom: 1px solid #EEEAE0; vertical
   <details class="subacc">
     <summary class="subacc-summary"><span>Leonardo da Vinci<span class="subacc-sub">1452&ndash;1519 &middot; St. Jerome in the Wilderness</span></span><span class="chevron">&#8250;</span></summary>
     <div class="subacc-body">
-      <p>By the time Leonardo reached Rome in 1513, at 61, he was already the most famous artist in Italy &mdash;
+      <p><div class="stamp c-artist"><div class="badge hex"><span>4/5</span></div><svg class="icon" viewBox="0 0 70 70"><circle cx="35" cy="35" r="27" fill="none" stroke="#1A1A1A" stroke-width="1.5"/><rect x="12" y="12" width="46" height="46" fill="none" stroke="#1A1A1A" stroke-width="1.5"/><circle cx="35" cy="26" r="7" fill="none" stroke="#A8895C" stroke-width="1.3"/><path d="M22 52 C22 42 27 36 35 36 C43 36 48 42 48 52" fill="none" stroke="#A8895C" stroke-width="1.3"/></svg></div>By the time Leonardo reached Rome in 1513, at 61, he was already the most famous artist in Italy &mdash;
       and increasingly a man out of step with the city's mood. Pope Leo X's court was consumed with Michelangelo
       and the fast-rising Raphael, both younger, both faster, both hungrier for the huge fresco commissions
       Leonardo had once defined. He was given rooms in the Vatican's Belvedere and a stipend, but little serious
@@ -839,7 +881,7 @@ table.hitlist td { padding: 10px 3px; border-bottom: 1px solid #EEEAE0; vertical
   <details class="subacc">
     <summary class="subacc-summary"><span>Donato Bramante<span class="subacc-sub">1444&ndash;1514 &middot; Belvedere Courtyard, the original spiral staircase</span></span><span class="chevron">&#8250;</span></summary>
     <div class="subacc-body">
-      <p>The oldest of this group and, in a sense, the one who made room for the others. Trained originally in
+      <p><div class="stamp c-artist"><div class="badge hex"><span>5/5</span></div><svg class="icon" viewBox="0 0 70 70"><path d="M35 8 C50 8 58 20 58 35 C58 48 48 58 35 62 L35 8 Z" fill="none" stroke="#1A1A1A" stroke-width="2"/><path d="M12 35 A23 27 0 0 1 35 8" fill="none" stroke="#A8895C" stroke-width="2" stroke-dasharray="3,2"/><circle cx="35" cy="35" r="4" fill="#1A1A1A"/></svg></div>The oldest of this group and, in a sense, the one who made room for the others. Trained originally in
       Urbino and Milan, Bramante arrived in Rome in his 50s and was appointed by Pope Julius II as chief architect
       of a project bigger than anything in the city: a completely new St. Peter's Basilica, replacing
       Constantine's 1,100-year-old original. His plan was a Greek cross under a massive central dome, directly
@@ -883,7 +925,7 @@ table.hitlist td { padding: 10px 3px; border-bottom: 1px solid #EEEAE0; vertical
   Sep 15.</p>
 
   <h3 class="subhead">The Great Siege of 1565 &amp; Victory Day <span class="tag">&#10003; researched</span></h3>
-  <p class="intro-text">Malta's Sep 8 public holiday commemorates the Knights' defense against a massive Ottoman
+  <div class="stamp c-knight"><div class="badge circle"><svg width="12" height="12" viewBox="0 0 70 70"><path d="M35 3 L41 16 L35 22 L29 16 Z M35 67 L41 54 L35 48 L29 54 Z M3 35 L16 29 L22 35 L16 41 Z M67 35 L54 41 L48 35 L54 29 Z M15 15 L24 20 L20 24 L15 15 Z M55 15 L46 20 L50 24 L55 15 Z M15 55 L24 50 L20 46 L15 55 Z M55 55 L46 50 L50 46 L55 55 Z" fill="none" stroke="#F7F5F0" stroke-width="1.8" stroke-linejoin="round"/><circle cx="35" cy="35" r="9" fill="none" stroke="#F7F5F0" stroke-width="1.5"/></svg></div><svg class="icon" viewBox="0 0 70 70"><path d="M35 3 L41 16 L35 22 L29 16 Z M35 67 L41 54 L35 48 L29 54 Z M3 35 L16 29 L22 35 L16 41 Z M67 35 L54 41 L48 35 L54 29 Z M15 15 L24 20 L20 24 L15 15 Z M55 15 L46 20 L50 24 L55 15 Z M15 55 L24 50 L20 46 L15 55 Z M55 55 L46 50 L50 46 L55 55 Z" fill="none" stroke="#1A1A1A" stroke-width="1.8" stroke-linejoin="round"/><circle cx="35" cy="35" r="9" fill="none" stroke="#A8895C" stroke-width="1.5"/></svg></div><p class="intro-text">Malta's Sep 8 public holiday commemorates the Knights' defense against a massive Ottoman
   invasion fleet in 1565. Knight <strong>Ippolito Malaspina</strong> arrived with the relief force at the siege's
   climax; his relative <strong>Vespasianus Malaspina</strong> died defending Fort St. Elmo and is memorialized
   inside St. John's Co-Cathedral itself.</p>
@@ -1013,6 +1055,348 @@ table.hitlist td { padding: 10px 3px; border-bottom: 1px solid #EEEAE0; vertical
     <div class="flashcard"><div class="flashcard-it">Uno, due, tre</div><div class="flashcard-pron">OO-noh, DOO-eh, treh</div><div class="flashcard-en">One, two, three</div></div>
   </div>
 
+  <a class="back-to-top" href="#top">Back to Top</a>
+</div>
+</details>
+
+<!-- ============ FIELD GUIDE ============ -->
+<details class="section" id="fieldguide">
+<summary class="section-summary"><span class="summary-label">&#9679; &middot; The Field Guide</span><span class="chevron">&#8250;</span></summary>
+<div class="section-body">
+  <div class="eyebrow">Bonus Track</div>
+  <h1 class="section-title">The Field Guide</h1>
+  <div class="section-rule"></div>
+  <p class="intro-text">Every stamp you've spotted throughout this doc, all in one place &mdash; the complete
+  treasure hunt, 40 cards deep. Check them off as you go.</p>
+<div class="fg-cat-header">The Caravaggio Trail</div>
+<div class="fg-card c-painting">
+  <div class="badge circle"><span>1/9</span></div>
+  <div class="eyebrow">Caravaggio Trail</div>
+  <div class="icon"><svg width="46" height="46" viewBox="0 0 70 70"><rect x="8" y="4" width="54" height="62" fill="none" stroke="#1A1A1A" stroke-width="1.5"/><line x1="16" y1="50" x2="38" y2="50" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/><circle cx="14" cy="50" r="3.5" fill="none" stroke="#1A1A1A" stroke-width="1.5"/><circle cx="44" cy="26" r="4" fill="none" stroke="#A8895C" stroke-width="1.5"/><line x1="44" y1="30" x2="44" y2="42" stroke="#A8895C" stroke-width="1.5"/><line x1="44" y1="42" x2="30" y2="48" stroke="#A8895C" stroke-width="2" stroke-linecap="round"/></svg></div>
+  <div class="title">The Beheading of St. John the Baptist</div>
+  <div class="meta">Valletta &middot; 1608</div>
+  <div class="hint"><b>Look here</b>St. John's Co-Cathedral, Oratory. His only signed work.</div>
+</div>
+<div class="fg-card c-painting">
+  <div class="badge circle"><span>2/9</span></div>
+  <div class="eyebrow">Caravaggio Trail</div>
+  <div class="icon"><svg width="46" height="46" viewBox="0 0 70 70"><rect x="8" y="4" width="54" height="62" fill="none" stroke="#1A1A1A" stroke-width="1.5"/><circle cx="30" cy="22" r="5" fill="none" stroke="#1A1A1A" stroke-width="1.5"/><path d="M27 27 Q22 36 26 46" fill="none" stroke="#1A1A1A" stroke-width="1.5"/><line x1="30" y1="30" x2="42" y2="42" stroke="#1A1A1A" stroke-width="1.5"/><rect x="34" y="42" width="16" height="10" fill="none" stroke="#A8895C" stroke-width="1.5"/><line x1="40" y1="40" x2="42" y2="44" stroke="#A8895C" stroke-width="1.3"/></svg></div>
+  <div class="title">Saint Jerome Writing</div>
+  <div class="meta">Valletta &middot; c. 1605&ndash;06</div>
+  <div class="hint"><b>Look here</b>St. John's Co-Cathedral. Stolen 1984, recovered two years later.</div>
+</div>
+<div class="fg-card c-painting">
+  <div class="badge circle"><span>3/9</span></div>
+  <div class="eyebrow">Caravaggio Trail</div>
+  <div class="icon"><svg width="46" height="46" viewBox="0 0 70 70"><rect x="8" y="4" width="54" height="62" fill="none" stroke="#1A1A1A" stroke-width="1.5"/><line x1="16" y1="50" x2="42" y2="50" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/><circle cx="14" cy="50" r="3.5" fill="none" stroke="#1A1A1A" stroke-width="1.5"/><circle cx="24" cy="26" r="3.5" fill="none" stroke="#A8895C" stroke-width="1.3"/><line x1="24" y1="30" x2="24" y2="40" stroke="#A8895C" stroke-width="1.3"/><line x1="24" y1="34" x2="18" y2="40" stroke="#A8895C" stroke-width="1.3"/><circle cx="46" cy="30" r="3.5" fill="none" stroke="#A8895C" stroke-width="1.3"/><line x1="46" y1="34" x2="46" y2="44" stroke="#A8895C" stroke-width="1.3"/></svg></div>
+  <div class="title">The Burial of St. Lucy</div>
+  <div class="meta">Syracuse &middot; 1608</div>
+  <div class="hint"><b>Look here</b>Santa Lucia alla Badia, Piazza del Duomo.</div>
+</div>
+<div class="fg-card c-painting">
+  <div class="badge circle"><span>4/9</span></div>
+  <div class="eyebrow">Caravaggio Trail</div>
+  <div class="icon"><svg width="46" height="46" viewBox="0 0 70 70"><rect x="8" y="4" width="54" height="62" fill="none" stroke="#1A1A1A" stroke-width="1.5"/><circle cx="35" cy="20" r="5" fill="none" stroke="#1A1A1A" stroke-width="1.5"/><path d="M28 26 L24 46 L46 46 L42 26 Z" fill="none" stroke="#1A1A1A" stroke-width="1.5"/><circle cx="35" cy="30" r="3" fill="none" stroke="#A8895C" stroke-width="1.3"/><circle cx="20" cy="54" r="3.5" fill="none" stroke="#A8895C" stroke-width="1.3"/><path d="M17 58 L22 50" fill="none" stroke="#A8895C" stroke-width="1.3"/></svg></div>
+  <div class="title">Madonna di Loreto</div>
+  <div class="meta">Rome &middot; 1604&ndash;06</div>
+  <div class="hint"><b>Look here</b>Sant'Agostino &mdash; barefoot, dirty-footed pilgrims scandalized Rome.</div>
+</div>
+<div class="fg-card c-painting">
+  <div class="badge circle"><span>5/9</span></div>
+  <div class="eyebrow">Caravaggio Trail</div>
+  <div class="icon"><svg width="46" height="46" viewBox="0 0 70 70"><rect x="8" y="4" width="54" height="62" fill="none" stroke="#1A1A1A" stroke-width="1.5"/><line x1="48" y1="16" x2="34" y2="32" stroke="#1A1A1A" stroke-width="2.5" stroke-linecap="round"/><circle cx="50" cy="12" r="3.5" fill="none" stroke="#1A1A1A" stroke-width="1.5"/><circle cx="20" cy="42" r="3.5" fill="none" stroke="#A8895C" stroke-width="1.3"/><circle cx="30" cy="46" r="3.5" fill="none" stroke="#A8895C" stroke-width="1.3"/><line x1="16" y1="46" x2="36" y2="46" stroke="#A8895C" stroke-width="1.3"/><line x1="20" y1="46" x2="20" y2="54" stroke="#A8895C" stroke-width="1.3"/><line x1="30" y1="46" x2="30" y2="54" stroke="#A8895C" stroke-width="1.3"/></svg></div>
+  <div class="title">The Calling of St. Matthew</div>
+  <div class="meta">Rome &middot; 1599&ndash;1600</div>
+  <div class="hint"><b>Look here</b>San Luigi dei Francesi, Contarelli Chapel.</div>
+</div>
+<div class="fg-card c-painting">
+  <div class="badge circle"><span>6/9</span></div>
+  <div class="eyebrow">Caravaggio Trail</div>
+  <div class="icon"><svg width="46" height="46" viewBox="0 0 70 70"><rect x="8" y="4" width="54" height="62" fill="none" stroke="#1A1A1A" stroke-width="1.5"/><circle cx="30" cy="44" r="5" fill="none" stroke="#1A1A1A" stroke-width="1.5"/><line x1="30" y1="49" x2="30" y2="58" stroke="#1A1A1A" stroke-width="1.5"/><line x1="35" y1="42" x2="46" y2="48" stroke="#1A1A1A" stroke-width="1.3"/><circle cx="42" cy="20" r="4" fill="none" stroke="#A8895C" stroke-width="1.3"/><path d="M36 22 L30 18 M48 22 L54 18" fill="none" stroke="#A8895C" stroke-width="1.3"/><line x1="40" y1="24" x2="34" y2="40" stroke="#A8895C" stroke-width="1.3"/></svg></div>
+  <div class="title">The Inspiration of St. Matthew</div>
+  <div class="meta">Rome &middot; 1602</div>
+  <div class="hint"><b>Look here</b>San Luigi dei Francesi, Contarelli Chapel.</div>
+</div>
+<div class="fg-card c-painting">
+  <div class="badge circle"><span>7/9</span></div>
+  <div class="eyebrow">Caravaggio Trail</div>
+  <div class="icon"><svg width="46" height="46" viewBox="0 0 70 70"><rect x="8" y="4" width="54" height="62" fill="none" stroke="#1A1A1A" stroke-width="1.5"/><line x1="18" y1="52" x2="38" y2="52" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/><circle cx="16" cy="52" r="3.5" fill="none" stroke="#1A1A1A" stroke-width="1.5"/><circle cx="42" cy="20" r="4" fill="none" stroke="#A8895C" stroke-width="1.3"/><line x1="42" y1="24" x2="42" y2="36" stroke="#A8895C" stroke-width="1.3"/><line x1="42" y1="24" x2="52" y2="14" stroke="#A8895C" stroke-width="2" stroke-linecap="round"/><line x1="42" y1="36" x2="34" y2="46" stroke="#A8895C" stroke-width="1.3"/></svg></div>
+  <div class="title">The Martyrdom of St. Matthew</div>
+  <div class="meta">Rome &middot; 1600&ndash;01</div>
+  <div class="hint"><b>Look here</b>San Luigi dei Francesi, Contarelli Chapel.</div>
+</div>
+<div class="fg-card c-painting">
+  <div class="badge circle"><span>8/9</span></div>
+  <div class="eyebrow">Caravaggio Trail</div>
+  <div class="icon"><svg width="46" height="46" viewBox="0 0 70 70"><rect x="8" y="4" width="54" height="62" fill="none" stroke="#1A1A1A" stroke-width="1.5"/><line x1="35" y1="14" x2="35" y2="50" stroke="#1A1A1A" stroke-width="2.2"/><line x1="21" y1="46" x2="49" y2="46" stroke="#1A1A1A" stroke-width="2.2"/><circle cx="35" cy="55" r="4" fill="none" stroke="#A8895C" stroke-width="1.5"/><line x1="35" y1="46" x2="24" y2="34" stroke="#A8895C" stroke-width="1.3"/><line x1="35" y1="46" x2="46" y2="34" stroke="#A8895C" stroke-width="1.3"/></svg></div>
+  <div class="title">The Crucifixion of St. Peter</div>
+  <div class="meta">Rome &middot; 1600&ndash;01</div>
+  <div class="hint"><b>Look here</b>Cerasi Chapel, Santa Maria del Popolo. Upside down, his own request.</div>
+</div>
+<div class="fg-card c-painting">
+  <div class="badge circle"><span>9/9</span></div>
+  <div class="eyebrow">Caravaggio Trail</div>
+  <div class="icon"><svg width="46" height="46" viewBox="0 0 70 70"><rect x="8" y="4" width="54" height="62" fill="none" stroke="#1A1A1A" stroke-width="1.5"/><circle cx="26" cy="48" r="4.5" fill="none" stroke="#1A1A1A" stroke-width="1.5"/><line x1="26" y1="52" x2="26" y2="58" stroke="#1A1A1A" stroke-width="1.5"/><line x1="26" y1="44" x2="18" y2="34" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round"/><line x1="26" y1="44" x2="30" y2="32" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round"/><path d="M38 40 Q46 24 58 22 Q52 30 54 40 Q46 36 38 40 Z" fill="none" stroke="#A8895C" stroke-width="1.3"/></svg></div>
+  <div class="title">The Conversion of St. Paul</div>
+  <div class="meta">Rome &middot; 1600&ndash;01</div>
+  <div class="hint"><b>Look here</b>Cerasi Chapel, Santa Maria del Popolo &mdash; faces the Peter across the room.</div>
+</div>
+<div class="fg-cat-header">Landmarks</div>
+<div class="fg-card c-landmark">
+  <div class="badge diamond"><span>1/18</span></div>
+  <div class="eyebrow">Landmark</div>
+  <div class="icon"><svg width="46" height="46" viewBox="0 0 70 70"><rect x="16" y="30" width="38" height="34" fill="none" stroke="#1A1A1A" stroke-width="2"/><path d="M16 30 L35 12 L54 30 Z" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linejoin="round"/><rect x="27" y="30" width="4" height="20" fill="none" stroke="#A8895C" stroke-width="1"/><rect x="39" y="30" width="4" height="20" fill="none" stroke="#A8895C" stroke-width="1"/></svg></div>
+  <div class="title">St. John's Co-Cathedral</div>
+  <div class="meta">Valletta &middot; 1577</div>
+  <div class="hint"><b>Look here</b>Baroque facade, twin bell towers, Republic Street.</div>
+</div>
+<div class="fg-card c-landmark">
+  <div class="badge diamond"><span>2/18</span></div>
+  <div class="eyebrow">Landmark</div>
+  <div class="icon"><svg width="46" height="46" viewBox="0 0 70 70"><rect x="8" y="34" width="54" height="30" fill="none" stroke="#1A1A1A" stroke-width="2"/><rect x="28" y="14" width="14" height="20" fill="none" stroke="#1A1A1A" stroke-width="2"/><line x1="16" y1="34" x2="16" y2="60" stroke="#A8895C" stroke-width="1"/><line x1="28" y1="34" x2="28" y2="60" stroke="#A8895C" stroke-width="1"/><line x1="42" y1="34" x2="42" y2="60" stroke="#A8895C" stroke-width="1"/><line x1="54" y1="34" x2="54" y2="60" stroke="#A8895C" stroke-width="1"/></svg></div>
+  <div class="title">Grand Master's Palace</div>
+  <div class="meta">Valletta &middot; 1571&ndash;80s</div>
+  <div class="hint"><b>Look here</b>HQ of the Knights of St. John, still Malta's government seat.</div>
+</div>
+<div class="fg-card c-landmark">
+  <div class="badge diamond"><span>3/18</span></div>
+  <div class="eyebrow">Landmark</div>
+  <div class="icon"><svg width="46" height="46" viewBox="0 0 70 70"><path d="M8 60 Q35 20 62 60" fill="none" stroke="#1A1A1A" stroke-width="2"/><circle cx="35" cy="50" r="3" fill="none" stroke="#A8895C" stroke-width="1.3"/><line x1="10" y1="60" x2="60" y2="60" stroke="#1A1A1A" stroke-width="2"/></svg></div>
+  <div class="title">Upper Barrakka Gardens</div>
+  <div class="meta">Valletta</div>
+  <div class="hint"><b>Look here</b>Grand Harbour views; noon cannon salute.</div>
+</div>
+<div class="fg-card c-landmark">
+  <div class="badge diamond"><span>4/18</span></div>
+  <div class="eyebrow">Landmark</div>
+  <div class="icon"><svg width="46" height="46" viewBox="0 0 70 70"><path d="M14 64 L14 30 A21 21 0 0 1 56 30 L56 64" fill="none" stroke="#1A1A1A" stroke-width="2"/><rect x="27" y="44" width="16" height="20" fill="none" stroke="#A8895C" stroke-width="1.3"/><rect x="6" y="58" width="58" height="6" fill="none" stroke="#1A1A1A" stroke-width="1.5"/></svg></div>
+  <div class="title">Mdina</div>
+  <div class="meta">Malta &middot; The Silent City</div>
+  <div class="hint"><b>Look here</b>Car-free walled city; traditional site of Paul meeting Publius.</div>
+</div>
+<div class="fg-card c-landmark">
+  <div class="badge diamond"><span>5/18</span></div>
+  <div class="eyebrow">Landmark</div>
+  <div class="icon"><svg width="46" height="46" viewBox="0 0 70 70"><rect x="10" y="36" width="50" height="26" fill="none" stroke="#1A1A1A" stroke-width="2"/><path d="M6 36 L35 18 L64 36" fill="none" stroke="#1A1A1A" stroke-width="2"/><line x1="20" y1="36" x2="20" y2="62" stroke="#A8895C" stroke-width="1"/><line x1="35" y1="36" x2="35" y2="62" stroke="#A8895C" stroke-width="1"/><line x1="50" y1="36" x2="50" y2="62" stroke="#A8895C" stroke-width="1"/></svg></div>
+  <div class="title">Domus Romana</div>
+  <div class="meta">Mdina</div>
+  <div class="hint"><b>Look here</b>1st-century Roman townhouse, mosaic floors.</div>
+</div>
+<div class="fg-card c-landmark">
+  <div class="badge diamond"><span>6/18</span></div>
+  <div class="eyebrow">Landmark</div>
+  <div class="icon"><svg width="46" height="46" viewBox="0 0 70 70"><path d="M10 62 Q10 30 35 26 Q60 30 60 62 Z" fill="none" stroke="#1A1A1A" stroke-width="2"/><path d="M22 62 Q22 40 35 38 Q48 40 48 62" fill="none" stroke="#A8895C" stroke-width="1.3"/></svg></div>
+  <div class="title">St. Paul's Grotto</div>
+  <div class="meta">Rabat</div>
+  <div class="hint"><b>Look here</b>Pilgrimage site since antiquity; visited by two popes.</div>
+</div>
+<div class="fg-card c-landmark">
+  <div class="badge diamond"><span>7/18</span></div>
+  <div class="eyebrow">Landmark</div>
+  <div class="icon"><svg width="46" height="46" viewBox="0 0 70 70"><path d="M35 4 C55 4 59 30 53 44 C49 54 45 64 35 66 C25 64 21 54 17 44 C11 30 15 4 35 4 Z" fill="none" stroke="#1A1A1A" stroke-width="2"/><path d="M35 14 C45 14 47 30 43 40 C41 46 38 52 35 54 C32 52 29 46 27 40 C23 30 25 14 35 14 Z" fill="none" stroke="#A8895C" stroke-width="1.3"/></svg></div>
+  <div class="title">The Ear of Dionysius</div>
+  <div class="meta">Syracuse</div>
+  <div class="hint"><b>Look here</b>Say something at the entrance &mdash; acoustics are the whole point.</div>
+</div>
+<div class="fg-card c-landmark">
+  <div class="badge diamond"><span>8/18</span></div>
+  <div class="eyebrow">Landmark</div>
+  <div class="icon"><svg width="46" height="46" viewBox="0 0 70 70"><rect x="10" y="30" width="50" height="34" fill="none" stroke="#1A1A1A" stroke-width="2"/><path d="M10 30 L35 12 L60 30 Z" fill="none" stroke="#1A1A1A" stroke-width="2"/><line x1="18" y1="30" x2="18" y2="60" stroke="#A8895C" stroke-width="1.5"/><line x1="28" y1="30" x2="28" y2="60" stroke="#A8895C" stroke-width="1.5"/><line x1="42" y1="30" x2="42" y2="60" stroke="#A8895C" stroke-width="1.5"/><line x1="52" y1="30" x2="52" y2="60" stroke="#A8895C" stroke-width="1.5"/></svg></div>
+  <div class="title">Syracuse Cathedral</div>
+  <div class="meta">Ortigia Island</div>
+  <div class="hint"><b>Look here</b>Built around the columns of a 5th-c. BC Temple of Athena.</div>
+</div>
+<div class="fg-card c-landmark">
+  <div class="badge diamond"><span>9/18</span></div>
+  <div class="eyebrow">Landmark</div>
+  <div class="icon"><svg width="46" height="46" viewBox="0 0 70 70"><ellipse cx="35" cy="46" rx="26" ry="14" fill="none" stroke="#1A1A1A" stroke-width="2"/><ellipse cx="35" cy="46" rx="14" ry="7" fill="none" stroke="#A8895C" stroke-width="1.3"/><path d="M20 34 Q22 24 18 16 M50 34 Q48 24 52 16" fill="none" stroke="#A8895C" stroke-width="1"/></svg></div>
+  <div class="title">Fountain of Arethusa</div>
+  <div class="meta">Ortigia Island</div>
+  <div class="hint"><b>Look here</b>Freshwater spring at the sea's edge &mdash; the nymph myth.</div>
+</div>
+<div class="fg-card c-landmark">
+  <div class="badge diamond"><span>10/18</span></div>
+  <div class="eyebrow">Landmark</div>
+  <div class="icon"><svg width="46" height="46" viewBox="0 0 70 70"><path d="M6 56 A29 22 0 0 1 64 56" fill="none" stroke="#1A1A1A" stroke-width="2"/><path d="M14 56 A21 15 0 0 1 56 56" fill="none" stroke="#A8895C" stroke-width="1.3"/><line x1="6" y1="56" x2="64" y2="56" stroke="#1A1A1A" stroke-width="2"/><path d="M20 12 L35 4 L50 12" fill="none" stroke="#1A1A1A" stroke-width="1.3" opacity="0.5"/></svg></div>
+  <div class="title">Teatro Antico</div>
+  <div class="meta">Taormina</div>
+  <div class="hint"><b>Look here</b>Greek foundations, Roman rebuild, Etna framed through the arches.</div>
+</div>
+<div class="fg-card c-landmark">
+  <div class="badge diamond"><span>11/18</span></div>
+  <div class="eyebrow">Landmark</div>
+  <div class="icon"><svg width="46" height="46" viewBox="0 0 70 70"><rect x="8" y="46" width="54" height="16" fill="none" stroke="#1A1A1A" stroke-width="2"/><line x1="14" y1="46" x2="20" y2="30" stroke="#1A1A1A" stroke-width="1.5"/><line x1="26" y1="46" x2="30" y2="24" stroke="#1A1A1A" stroke-width="1.5"/><line x1="40" y1="46" x2="44" y2="26" stroke="#1A1A1A" stroke-width="1.5"/><line x1="52" y1="46" x2="56" y2="32" stroke="#1A1A1A" stroke-width="1.5"/></svg></div>
+  <div class="title">Herculaneum & Pompeii</div>
+  <div class="meta">Naples Bay</div>
+  <div class="hint"><b>Look here</b>The body casts, the Forum, Vesuvius behind it all.</div>
+</div>
+<div class="fg-card c-landmark">
+  <div class="badge diamond"><span>12/18</span></div>
+  <div class="eyebrow">Landmark</div>
+  <div class="icon"><svg width="46" height="46" viewBox="0 0 70 70"><rect x="8" y="36" width="54" height="28" fill="none" stroke="#1A1A1A" stroke-width="2"/><path d="M4 36 L35 18 L66 36" fill="none" stroke="#1A1A1A" stroke-width="2"/><line x1="20" y1="36" x2="20" y2="64" stroke="#A8895C" stroke-width="1.2"/><line x1="35" y1="36" x2="35" y2="64" stroke="#A8895C" stroke-width="1.2"/><line x1="50" y1="36" x2="50" y2="64" stroke="#A8895C" stroke-width="1.2"/></svg></div>
+  <div class="title">Naples Archaeological Museum</div>
+  <div class="meta">Naples</div>
+  <div class="hint"><b>Look here</b>The Alexander Mosaic &mdash; the real payoff for Pompeii.</div>
+</div>
+<div class="fg-card c-landmark">
+  <div class="badge diamond"><span>13/18</span></div>
+  <div class="eyebrow">Landmark</div>
+  <div class="icon"><svg width="46" height="46" viewBox="0 0 70 70"><path d="M14 64 L18 40 L52 40 L56 64 Z" fill="none" stroke="#1A1A1A" stroke-width="2"/><path d="M22 40 L35 16 L48 40" fill="none" stroke="#1A1A1A" stroke-width="2"/><line x1="35" y1="16" x2="35" y2="8" stroke="#A8895C" stroke-width="1.5"/><rect x="30" y="50" width="10" height="14" fill="none" stroke="#A8895C" stroke-width="1.2"/></svg></div>
+  <div class="title">Abbey of Montecassino</div>
+  <div class="meta">c. AD 529</div>
+  <div class="hint"><b>Look here</b>Founded by St. Benedict; rebuilt after WWII.</div>
+</div>
+<div class="fg-card c-landmark">
+  <div class="badge diamond"><span>14/18</span></div>
+  <div class="eyebrow">Landmark</div>
+  <div class="icon"><svg width="46" height="46" viewBox="0 0 70 70"><ellipse cx="35" cy="50" rx="32" ry="8" fill="none" stroke="#1A1A1A" stroke-width="2.2"/><path d="M3 50 L3 30 Q35 4 67 30 L67 50" fill="none" stroke="#1A1A1A" stroke-width="2.2"/><line x1="12" y1="46" x2="12" y2="28" stroke="#A8895C" stroke-width="1"/><line x1="22" y1="46" x2="22" y2="20" stroke="#A8895C" stroke-width="1"/><line x1="35" y1="46" x2="35" y2="16" stroke="#A8895C" stroke-width="1"/><line x1="48" y1="46" x2="48" y2="20" stroke="#A8895C" stroke-width="1"/><line x1="58" y1="46" x2="58" y2="28" stroke="#A8895C" stroke-width="1"/></svg></div>
+  <div class="title">Colosseum</div>
+  <div class="meta">Rome &middot; AD 80</div>
+  <div class="hint"><b>Look here</b>Arch of Constantine sits just steps from the north side.</div>
+</div>
+<div class="fg-card c-landmark">
+  <div class="badge diamond"><span>15/18</span></div>
+  <div class="eyebrow">Landmark</div>
+  <div class="icon"><svg width="46" height="46" viewBox="0 0 70 70"><path d="M8 66 L8 30 A32 32 0 0 1 72 30 L72 66" fill="none" stroke="#1A1A1A" stroke-width="2.2" transform="translate(-5,0) scale(0.94)"/><rect x="-3" y="52" width="76" height="14" fill="none" stroke="#1A1A1A" stroke-width="2.2" transform="translate(-5,0) scale(0.94)"/><line x1="9" y1="52" x2="9" y2="38" stroke="#A8895C" stroke-width="1.2"/><line x1="21" y1="52" x2="21" y2="30" stroke="#A8895C" stroke-width="1.2"/><line x1="33" y1="52" x2="33" y2="26" stroke="#A8895C" stroke-width="1.2"/><line x1="45" y1="52" x2="45" y2="30" stroke="#A8895C" stroke-width="1.2"/><line x1="57" y1="52" x2="57" y2="38" stroke="#A8895C" stroke-width="1.2"/></svg></div>
+  <div class="title">Pantheon</div>
+  <div class="meta">Rome &middot; c. AD 126</div>
+  <div class="hint"><b>Look here</b>The oculus &mdash; the only light source, open to the sky.</div>
+</div>
+<div class="fg-card c-landmark">
+  <div class="badge diamond"><span>16/18</span></div>
+  <div class="eyebrow">Landmark</div>
+  <div class="icon"><svg width="46" height="46" viewBox="0 0 70 70"><ellipse cx="35" cy="30" rx="15" ry="24" fill="none" stroke="#1A1A1A" stroke-width="2"/><path d="M4 58 A31 18 0 0 1 35 44" fill="none" stroke="#1A1A1A" stroke-width="2"/><path d="M66 58 A31 18 0 0 0 35 44" fill="none" stroke="#1A1A1A" stroke-width="2"/><rect x="22" y="52" width="26" height="12" fill="none" stroke="#1A1A1A" stroke-width="2"/><line x1="35" y1="4" x2="35" y2="8" stroke="#1A1A1A" stroke-width="1.5"/></svg></div>
+  <div class="title">St. Peter's Basilica</div>
+  <div class="meta">Vatican &middot; 1506&ndash;1626</div>
+  <div class="hint"><b>Look here</b>Michelangelo's Piet&agrave; is just inside the entrance.</div>
+</div>
+<div class="fg-card c-landmark">
+  <div class="badge diamond"><span>17/18</span></div>
+  <div class="eyebrow">Landmark</div>
+  <div class="icon"><svg width="46" height="46" viewBox="0 0 70 70"><rect x="14" y="56" width="42" height="8" fill="none" stroke="#1A1A1A" stroke-width="1.8"/><rect x="18" y="48" width="34" height="8" fill="none" stroke="#1A1A1A" stroke-width="1.8"/><rect x="22" y="40" width="26" height="8" fill="none" stroke="#1A1A1A" stroke-width="1.8"/><rect x="26" y="32" width="18" height="8" fill="none" stroke="#1A1A1A" stroke-width="1.8"/><rect x="28" y="10" width="14" height="22" fill="none" stroke="#A8895C" stroke-width="1.5"/><path d="M28 10 L35 4 L42 10 Z" fill="none" stroke="#A8895C" stroke-width="1.3"/></svg></div>
+  <div class="title">The Spanish Steps</div>
+  <div class="meta">Rome &middot; 1723&ndash;25</div>
+  <div class="hint"><b>Look here</b>Trinit&agrave; dei Monti at the top; Bernini's father's fountain below.</div>
+</div>
+<div class="fg-card c-landmark">
+  <div class="badge diamond"><span>18/18</span></div>
+  <div class="eyebrow">Landmark</div>
+  <div class="icon"><svg width="46" height="46" viewBox="0 0 70 70"><rect x="10" y="40" width="50" height="24" fill="none" stroke="#1A1A1A" stroke-width="2"/><path d="M16 40 A6 10 0 0 1 28 40" fill="none" stroke="#A8895C" stroke-width="1.5"/><path d="M30 40 A6 10 0 0 1 42 40" fill="none" stroke="#A8895C" stroke-width="1.5"/><path d="M44 40 A6 10 0 0 1 56 40" fill="none" stroke="#A8895C" stroke-width="1.5"/></svg></div>
+  <div class="title">The Tabularium</div>
+  <div class="meta">Capitoline Hill</div>
+  <div class="hint"><b>Look here</b>Doric arches opening straight onto the Roman Forum.</div>
+</div>
+<div class="fg-cat-header">The Artists</div>
+<div class="fg-card c-artist">
+  <div class="badge hex"><span>1/5</span></div>
+  <div class="eyebrow">The Artists</div>
+  <div class="icon"><svg width="46" height="46" viewBox="0 0 70 70"><circle cx="35" cy="24" r="12" fill="none" stroke="#1A1A1A" stroke-width="2"/><path d="M14 62 C14 44 20 36 35 36 C50 36 56 44 56 62" fill="none" stroke="#1A1A1A" stroke-width="2"/></svg></div>
+  <div class="title">Michelangelo Buonarroti</div>
+  <div class="meta">1475&ndash;1564</div>
+  <div class="hint"><b>Look here</b>The Piet&agrave;, St. Peter's entrance. His only signed work.</div>
+</div>
+<div class="fg-card c-artist">
+  <div class="badge hex"><span>2/5</span></div>
+  <div class="eyebrow">The Artists</div>
+  <div class="icon"><svg width="46" height="46" viewBox="0 0 70 70"><circle cx="35" cy="35" r="26" fill="none" stroke="#1A1A1A" stroke-width="1.6"/><path d="M15 35 A20 12 0 0 1 55 35" fill="none" stroke="#A8895C" stroke-width="1.6"/><circle cx="35" cy="35" r="6" fill="none" stroke="#1A1A1A" stroke-width="1.3"/></svg></div>
+  <div class="title">Raphael</div>
+  <div class="meta">1483&ndash;1520</div>
+  <div class="hint"><b>Look here</b>Buried inside the Pantheon &mdash; his own tomb, his own epitaph.</div>
+</div>
+<div class="fg-card c-artist">
+  <div class="badge hex"><span>3/5</span></div>
+  <div class="eyebrow">The Artists</div>
+  <div class="icon"><svg width="46" height="46" viewBox="0 0 70 70"><path d="M35 62 C25 50 25 34 35 8 C45 34 45 50 35 62 Z" fill="none" stroke="#1A1A1A" stroke-width="2"/><path d="M20 44 Q35 38 50 44" fill="none" stroke="#A8895C" stroke-width="1.3"/></svg></div>
+  <div class="title">Gian Lorenzo Bernini</div>
+  <div class="meta">1598&ndash;1680</div>
+  <div class="hint"><b>Look here</b>St. Peter's colonnade & the Four Rivers Fountain.</div>
+</div>
+<div class="fg-card c-artist">
+  <div class="badge hex"><span>4/5</span></div>
+  <div class="eyebrow">The Artists</div>
+  <div class="icon"><svg width="46" height="46" viewBox="0 0 70 70"><circle cx="35" cy="35" r="27" fill="none" stroke="#1A1A1A" stroke-width="1.5"/><rect x="12" y="12" width="46" height="46" fill="none" stroke="#1A1A1A" stroke-width="1.5"/><circle cx="35" cy="26" r="7" fill="none" stroke="#A8895C" stroke-width="1.3"/><path d="M22 52 C22 42 27 36 35 36 C43 36 48 42 48 52" fill="none" stroke="#A8895C" stroke-width="1.3"/></svg></div>
+  <div class="title">Leonardo da Vinci</div>
+  <div class="meta">1452&ndash;1519</div>
+  <div class="hint"><b>Look here</b>St. Jerome in the Wilderness, Vatican Pinacoteca.</div>
+</div>
+<div class="fg-card c-artist">
+  <div class="badge hex"><span>5/5</span></div>
+  <div class="eyebrow">The Artists</div>
+  <div class="icon"><svg width="46" height="46" viewBox="0 0 70 70"><path d="M35 8 C50 8 58 20 58 35 C58 48 48 58 35 62 L35 8 Z" fill="none" stroke="#1A1A1A" stroke-width="2"/><path d="M12 35 A23 27 0 0 1 35 8" fill="none" stroke="#A8895C" stroke-width="2" stroke-dasharray="3,2"/><circle cx="35" cy="35" r="4" fill="#1A1A1A"/></svg></div>
+  <div class="title">Donato Bramante</div>
+  <div class="meta">1444&ndash;1514</div>
+  <div class="hint"><b>Look here</b>The Momo Staircase echoes his original spiral ramp.</div>
+</div>
+<div class="fg-cat-header">Paul's Journey &amp; The Way</div>
+<div class="fg-card c-faith">
+  <div class="badge cross"><svg width="13" height="13" viewBox="0 0 20 20"><rect x="8" y="2" width="4" height="16" fill="#F7F5F0"/><rect x="2" y="8" width="16" height="4" fill="#F7F5F0"/></svg></div>
+  <div class="eyebrow">Paul's Journey & The Way</div>
+  <div class="icon"><svg width="46" height="46" viewBox="0 0 70 70"><path d="M35 12 C25 8 14 8 8 12 L8 58 C14 54 25 54 35 58 C45 54 56 54 62 58 L62 12 C56 8 45 8 35 12 Z" fill="none" stroke="#1A1A1A" stroke-width="2" stroke-linejoin="round"/><line x1="35" y1="12" x2="35" y2="58" stroke="#1A1A1A" stroke-width="1.5"/><line x1="35" y1="26" x2="35" y2="38" stroke="#A8895C" stroke-width="2.5"/><line x1="29" y1="32" x2="41" y2="32" stroke="#A8895C" stroke-width="2.5"/></svg></div>
+  <div class="title">The Viper on Malta</div>
+  <div class="meta">Acts 28:1&ndash;6</div>
+  <div class="hint"><b>Look here</b>The origin of Malta's whole devotion to Paul.</div>
+</div>
+<div class="fg-card c-faith">
+  <div class="badge cross"><svg width="13" height="13" viewBox="0 0 20 20"><rect x="8" y="2" width="4" height="16" fill="#F7F5F0"/><rect x="2" y="8" width="16" height="4" fill="#F7F5F0"/></svg></div>
+  <div class="eyebrow">Paul's Journey & The Way</div>
+  <div class="icon"><svg width="46" height="46" viewBox="0 0 70 70"><rect x="14" y="14" width="42" height="48" fill="none" stroke="#1A1A1A" stroke-width="2"/><line x1="22" y1="26" x2="48" y2="26" stroke="#A8895C" stroke-width="1.3"/><line x1="22" y1="34" x2="48" y2="34" stroke="#A8895C" stroke-width="1.3"/><line x1="22" y1="42" x2="40" y2="42" stroke="#A8895C" stroke-width="1.3"/></svg></div>
+  <div class="title">The Prison Epistles</div>
+  <div class="meta">Philippians &middot; Colossians &middot; Ephesians &middot; Philemon</div>
+  <div class="hint"><b>Look here</b>Written from house arrest in Rome.</div>
+</div>
+<div class="fg-card c-faith">
+  <div class="badge cross"><svg width="13" height="13" viewBox="0 0 20 20"><rect x="8" y="2" width="4" height="16" fill="#F7F5F0"/><rect x="2" y="8" width="16" height="4" fill="#F7F5F0"/></svg></div>
+  <div class="eyebrow">Paul's Journey & The Way</div>
+  <div class="icon"><svg width="46" height="46" viewBox="0 0 70 70"><path d="M35 8 C40 22 50 26 50 40 C50 52 43 60 35 60 C27 60 20 52 20 40 C20 26 30 22 35 8 Z" fill="none" stroke="#1A1A1A" stroke-width="2"/><path d="M35 24 C37 32 42 34 42 42 C42 48 39 52 35 52 C31 52 28 48 28 42 C28 34 33 32 35 24 Z" fill="none" stroke="#A8895C" stroke-width="1.3"/></svg></div>
+  <div class="title">Nero & the Fire of Rome</div>
+  <div class="meta">AD 64</div>
+  <div class="hint"><b>Look here</b>Tacitus's account; the traditional context for Peter & Paul's deaths.</div>
+</div>
+<div class="fg-card c-faith">
+  <div class="badge cross"><svg width="13" height="13" viewBox="0 0 20 20"><rect x="8" y="2" width="4" height="16" fill="#F7F5F0"/><rect x="2" y="8" width="16" height="4" fill="#F7F5F0"/></svg></div>
+  <div class="eyebrow">Paul's Journey & The Way</div>
+  <div class="icon"><svg width="46" height="46" viewBox="0 0 70 70"><circle cx="24" cy="35" r="14" fill="none" stroke="#1A1A1A" stroke-width="1.8"/><circle cx="46" cy="35" r="14" fill="none" stroke="#1A1A1A" stroke-width="1.8"/><line x1="24" y1="27" x2="24" y2="43" stroke="#A8895C" stroke-width="1.3"/><line x1="20" y1="35" x2="28" y2="35" stroke="#A8895C" stroke-width="1.3"/></svg></div>
+  <div class="title">Two Apostles, One City</div>
+  <div class="meta">Feast of Sts. Peter & Paul, June 29</div>
+  <div class="hint"><b>Look here</b>St. Peter's and St. Paul Outside the Walls bookend Rome.</div>
+</div>
+<div class="fg-card c-faith">
+  <div class="badge cross"><svg width="13" height="13" viewBox="0 0 20 20"><rect x="8" y="2" width="4" height="16" fill="#F7F5F0"/><rect x="2" y="8" width="16" height="4" fill="#F7F5F0"/></svg></div>
+  <div class="eyebrow">Paul's Journey & The Way</div>
+  <div class="icon"><svg width="46" height="46" viewBox="0 0 70 70"><path d="M14 64 L14 40 Q14 20 35 20 Q56 20 56 40 L56 64" fill="none" stroke="#1A1A1A" stroke-width="2"/><circle cx="25" cy="46" r="3" fill="none" stroke="#A8895C" stroke-width="1.2"/><circle cx="45" cy="46" r="3" fill="none" stroke="#A8895C" stroke-width="1.2"/><circle cx="35" cy="34" r="3" fill="none" stroke="#A8895C" stroke-width="1.2"/></svg></div>
+  <div class="title">The Catacombs</div>
+  <div class="meta">Catacombs of St. Sebastian</div>
+  <div class="hint"><b>Look here</b>Legal burial complexes, not secret hideouts.</div>
+</div>
+<div class="fg-card c-faith">
+  <div class="badge cross"><svg width="13" height="13" viewBox="0 0 20 20"><rect x="8" y="2" width="4" height="16" fill="#F7F5F0"/><rect x="2" y="8" width="16" height="4" fill="#F7F5F0"/></svg></div>
+  <div class="eyebrow">Paul's Journey & The Way</div>
+  <div class="icon"><svg width="46" height="46" viewBox="0 0 70 70"><rect x="12" y="28" width="46" height="34" fill="none" stroke="#1A1A1A" stroke-width="2"/><path d="M12 28 L35 10 L58 28" fill="none" stroke="#1A1A1A" stroke-width="2"/><line x1="35" y1="10" x2="35" y2="4" stroke="#A8895C" stroke-width="1.5"/><circle cx="35" cy="4" r="1.5" fill="#A8895C"/></svg></div>
+  <div class="title">Edict of Milan</div>
+  <div class="meta">AD 313</div>
+  <div class="hint"><b>Look here</b>The turning point from persecution to state religion.</div>
+</div>
+<div class="fg-cat-header">Knights of Malta</div>
+<div class="fg-card c-knight">
+  <div class="badge malta"><svg width="15" height="15" viewBox="0 0 70 70"><path d="M35 3 L41 16 L35 22 L29 16 Z M35 67 L41 54 L35 48 L29 54 Z M3 35 L16 29 L22 35 L16 41 Z M67 35 L54 41 L48 35 L54 29 Z M15 15 L24 20 L20 24 L15 15 Z M55 15 L46 20 L50 24 L55 15 Z M15 55 L24 50 L20 46 L15 55 Z M55 55 L46 50 L50 46 L55 55 Z" fill="#F7F5F0"/></svg></div>
+  <div class="eyebrow">Knights of Malta</div>
+  <div class="icon"><svg width="46" height="46" viewBox="0 0 70 70"><path d="M35 3 L41 16 L35 22 L29 16 Z M35 67 L41 54 L35 48 L29 54 Z M3 35 L16 29 L22 35 L16 41 Z M67 35 L54 41 L48 35 L54 29 Z M15 15 L24 20 L20 24 L15 15 Z M55 15 L46 20 L50 24 L55 15 Z M15 55 L24 50 L20 46 L15 55 Z M55 55 L46 50 L50 46 L55 55 Z" fill="none" stroke="#1A1A1A" stroke-width="1.8" stroke-linejoin="round"/><circle cx="35" cy="35" r="9" fill="none" stroke="#A8895C" stroke-width="1.5"/></svg></div>
+  <div class="title">The Great Siege of 1565</div>
+  <div class="meta">St. John's Co-Cathedral</div>
+  <div class="hint"><b>Look here</b>Vespasianus Malaspina's memorial, above the Langue of Italy chapel.</div>
+</div>
+<div class="fg-card c-knight">
+  <div class="badge malta"><svg width="15" height="15" viewBox="0 0 70 70"><path d="M35 3 L41 16 L35 22 L29 16 Z M35 67 L41 54 L35 48 L29 54 Z M3 35 L16 29 L22 35 L16 41 Z M67 35 L54 41 L48 35 L54 29 Z M15 15 L24 20 L20 24 L15 15 Z M55 15 L46 20 L50 24 L55 15 Z M15 55 L24 50 L20 46 L15 55 Z M55 55 L46 50 L50 46 L55 55 Z" fill="#F7F5F0"/></svg></div>
+  <div class="eyebrow">Knights of Malta</div>
+  <div class="icon"><svg width="46" height="46" viewBox="0 0 70 70"><rect x="8" y="34" width="54" height="30" fill="none" stroke="#1A1A1A" stroke-width="2"/><rect x="28" y="14" width="14" height="20" fill="none" stroke="#1A1A1A" stroke-width="2"/><path d="M31 20 L35 15 L39 20 L35 25 Z" fill="none" stroke="#A8895C" stroke-width="1.3"/></svg></div>
+  <div class="title">The Knights Hospitaller</div>
+  <div class="meta">Ruled Malta 1530&ndash;1798</div>
+  <div class="hint"><b>Look here</b>The Grand Master's Palace was their seat of power.</div>
+</div>
+  <div class="fg-legend">
+    <div class="fg-legend-row"><div class="fg-legend-tri" style="border-top:12px solid #1A1A1A; border-right:12px solid transparent;"></div><span><strong>Black corner</strong> &mdash; ideas, people, works</span></div>
+    <div class="fg-legend-row"><div class="fg-legend-tri" style="border-top:12px solid #A8895C; border-right:12px solid transparent;"></div><span><strong>Gold corner</strong> &mdash; physical places</span></div>
+  </div>
   <a class="back-to-top" href="#top">Back to Top</a>
 </div>
 </details>
